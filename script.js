@@ -48,15 +48,9 @@ delButton.addEventListener('click', () => {
 // Keyboard Input
 window.addEventListener('keydown', (e) => {
   console.log(e.code);
-  if (
-    (e.shiftKey && e.code == 'Equal') ||
-    (e.shiftKey && e.code == 'NumpadAdd')
-  ) {
+  if ((e.shiftKey && e.code == 'Equal') || e.code == 'NumpadAdd') {
     progress += '+';
-  } else if (
-    (e.shiftKey && e.code == 'Digit8') ||
-    (e.shiftKey && e.code == 'NumpadMultiply')
-  ) {
+  } else if ((e.shiftKey && e.code == 'Digit8') || e.code == 'NumpadMultiply') {
     progress += '*';
   } else if (!e.shiftKey) {
     switch (e.code) {
@@ -118,7 +112,7 @@ window.addEventListener('keydown', (e) => {
         resultShow.innerHTML = result;
         break;
       case 'Minus':
-      case 'NumpadSubstract':
+      case 'NumpadSubtract':
         progress += '-';
         break;
       case 'Slash':
