@@ -47,47 +47,66 @@ delButton.addEventListener('click', () => {
 
 // Keyboard Input
 window.addEventListener('keydown', (e) => {
-  if (e.shiftKey && e.code == 'Equal') {
+  console.log(e.code);
+  if (
+    (e.shiftKey && e.code == 'Equal') ||
+    (e.shiftKey && e.code == 'NumpadAdd')
+  ) {
     progress += '+';
-  } else if (e.shiftKey && e.code == 'Digit8') {
+  } else if (
+    (e.shiftKey && e.code == 'Digit8') ||
+    (e.shiftKey && e.code == 'NumpadMultiply')
+  ) {
     progress += '*';
   } else if (!e.shiftKey) {
     switch (e.code) {
       case 'Digit1':
+      case 'Numpad1':
         progress += '1';
         break;
       case 'Digit2':
+      case 'Numpad2':
         progress += '2';
         break;
       case 'Digit3':
+      case 'Numpad3':
         progress += '3';
         break;
       case 'Digit4':
+      case 'Numpad5':
         progress += '4';
         break;
       case 'Digit5':
+      case 'Numpad5':
         progress += '5';
         break;
       case 'Digit6':
+      case 'Numpad6':
         progress += '6';
         break;
       case 'Digit7':
+      case 'Numpad7':
         progress += '7';
         break;
       case 'Digit8':
+      case 'Numpad8':
         progress += '8';
         break;
       case 'Digit9':
+      case 'Numpad9':
         progress += '9';
         break;
       case 'Digit0':
+      case 'Numpad0':
         progress += '0';
         break;
       case 'Period':
+      case 'NumpadDecimal':
         progress += '.';
         break;
       case 'Enter':
       case 'Equal':
+      case 'NumpadEnter':
         let result = eval(progress);
         if (result.toString().length > 11) {
           result = result.toExponential(6);
@@ -99,9 +118,11 @@ window.addEventListener('keydown', (e) => {
         resultShow.innerHTML = result;
         break;
       case 'Minus':
+      case 'NumpadSubstract':
         progress += '-';
         break;
       case 'Slash':
+      case 'NumpadDivide':
         progress += '/';
         break;
       case 'Delete':
