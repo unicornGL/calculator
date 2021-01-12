@@ -71,6 +71,7 @@ body {
 .func:hover {
   background-color: rgba(204, 204, 204, 0.1);
   color: #00adb5;
+  font-size: 45px;
 }
 
 .func {
